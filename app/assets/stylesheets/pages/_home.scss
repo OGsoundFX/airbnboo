@@ -2,8 +2,12 @@
 .banner {
   background-image: image-url('banner.jpeg');
   background-size: cover;
-  height: 1000px;
+  background-position: center;
+  height: 100vh;
   background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   h1 {
     color: #A50500;
     font-family: 'Schoolbell';
@@ -11,8 +15,12 @@
 }
 
 .banner {
-  h3 {
+  h4 {
     color: #877872;
     font-family: 'Roboto'
   }
+}
+
+.banner-cta {
+  text-align: center;
 }

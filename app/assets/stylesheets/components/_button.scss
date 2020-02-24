@@ -1,0 +1,12 @@
+.creepy-btn {
+  font-size: 20px;
+  background-color: #877872;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 10px;
+  &:hover {
+    background-color: red;
+    transition: all 2s ease-out;
+  }
+}
