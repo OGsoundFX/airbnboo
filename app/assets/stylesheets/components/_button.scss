@@ -5,8 +5,9 @@
   font-weight: bold;
   border-radius: 4px;
   margin-top: 10px;
-  &:hover {
+  &:hover, &:focus {
     background-color: red;
     transition: all 2s ease-out;
+    outline: none;
   }
 }
