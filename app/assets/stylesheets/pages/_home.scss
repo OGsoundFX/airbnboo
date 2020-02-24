@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   background-image: image-url('banner.jpeg');
   background-size: cover;
