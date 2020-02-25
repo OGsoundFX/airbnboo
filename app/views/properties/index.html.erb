@@ -1,4 +1,4 @@
 <% @properties.each do |property| %>
-  <h2><%= property.name %></h2>
+<h2><%= link_to  property.name, property_path(property) %></h2>
   <p><%= property.address %></p>
 <% end %>
