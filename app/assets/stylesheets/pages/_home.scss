@@ -1,8 +1,7 @@
 // Specific CSS for your home-page
-// html {
-//   scroll-behavior: smooth;
-//   // background-color: black;
-// }
+html {
+  scroll-behavior: smooth;
+}
 
 .banner {
   background-image: image-url('banner.jpeg');
@@ -29,5 +28,3 @@
 .banner-cta {
   text-align: center;
 }
-
-
