@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @properties = Property.all
   end
+
+  def new
+    @user = User.find(params[:user_id])
+    @booking = Booking.new
+  end
 end
