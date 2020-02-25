@@ -2,4 +2,38 @@
     width: 300px;
     height: 300px;
     margin: 15px;
+    background: linear-gradient(#615854 , rgb(37, 37, 37));
+    background-size: cover;
+    object-fit: cover;
 }
+
+
+.card-body{
+    display: inline-block;
+}
+
+.card-title{
+    font-size: 2em;
+    color: #FD1015;
+}
+
+.card-text{
+    color: #877872;
+    
+}
+
+.btn-ghost {
+    background-color: #877872 ;
+    color: #FD1015;
+    border: 1px solid #4A4A4A;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    opacity: 1;
+  }
+
