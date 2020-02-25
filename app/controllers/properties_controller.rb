@@ -6,7 +6,10 @@ class PropertiesController < ApplicationController
 
 # list specific properties
   def show
-     @property = Property.find(params[:id])
+    @user = current_user
+    @property = Property.find(params[:id])
+    @booking = Booking.new
+    @booking.property = @property
   end
 
 # create new properties

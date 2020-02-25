@@ -1,9 +1,4 @@
-<h2><%= @property.name %></h2>
-<p><%= @property.address %></p>
-
-<h5>Available: <%= @booking.status %></h5>
-
-<h1>Choose your date to book this place</h1>
+<h1>Choose your dates</h1>
 
 <%= simple_form_for([@user, @booking]) do |f| %>
   <%= f.error_notification %>
