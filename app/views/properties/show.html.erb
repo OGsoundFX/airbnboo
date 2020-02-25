@@ -1,29 +1,78 @@
-<h2><%= @property.name %></h2>
-<p><%= @property.address %></p>
+<div class="container-fluid">
 
-<h5>Available: <% if @booking.status == true %>
-  <%= "unavailable" %>
-  <% else %>
-  <%= "available" %>
-  <% end %>
-</h5>
 
-<h1>Choose your date to book this place</h1>
+  <div class="row property-header">
+    <div class="col-12">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for([@user, @booking]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
 
-  <div class="form-inputs">
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :property_id, as: :hidden %>
-    <%= f.input :status, as: :hidden %>
+  <div class="row property-body">
+
+
+    <div class="col-8">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
+    </div>
+
+
+    <div class="col-md-4 col-sm-12">
+      <h4 class="roboto">Choose your date to book this place</h4>
+
+      <%= simple_form_for([@user, @booking]) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :property_id, as: :hidden %>
+          <%= f.input :status, as: :hidden %>
+        </div>
+
+        <div class="form-actions text-right">
+          <%= f.button :submit, class: "btn btn-primary creepy-btn" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+
+
+
+
+
+</div> <!-- end container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--       <p>Available: <% if @booking.status %>
+        <%= "unavailable" %>
+        <% else %>
+        <%= "available" %>
+        <% end %>
+      </p>
+
+
+    </div>
   </div>
-<% end %>
+</div>
 
 <%= link_to '<< back' , properties_path%>
+ -->
