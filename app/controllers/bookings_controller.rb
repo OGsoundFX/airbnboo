@@ -8,15 +8,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
+      @booking.status = true
       redirect_to property_path(@booking.property_id)
     else
       render 'new'
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :property_id)
+    params.require(:booking).permit(:date, :property_id, :status)
   end
 end
