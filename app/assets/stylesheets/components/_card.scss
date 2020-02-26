@@ -1,13 +1,18 @@
 .card{
     display: flex;
     width: 300px;
-    height: 350px;
-    margin: 15px;
+    height: 100%;
+    margin: 15px ;
     background: linear-gradient(#615854 , rgb(37, 37, 37));
     padding: 5px;
     align-items: center;
     box-shadow: 0px 0px 13px;
 }
+
+.container{
+    margin: 20px auto;
+}
+
 
 .card-title{
     font-size: 2em;
