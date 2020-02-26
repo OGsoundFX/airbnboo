@@ -6,6 +6,10 @@
 $body-font: "Roboto", "Helvetica", "sans-serif";
 $headers-font: "Schoolbell", "Helvetica", "sans-serif";
 
+.roboto {
+  font-family: $body-font;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
