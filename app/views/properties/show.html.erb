@@ -1,23 +1,52 @@
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <% if @property.photo.attached? %>
   <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
 <% else %>
-  <%=  image_tag 'haunted-house'%>
-  <%=  %>
+<div class='background'>
+  <div class="w3-content w3-display-container">
+    <%=  image_tag 'haunted-house', class: 'bg-image' %>
+    <%=  image_tag 'banner', class: 'bg-image' %>
+    <%=  image_tag 'haunted-house', class: 'bg-image' %>
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+  
+
+</div>
+    
 <% end %>
 
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("bg-image");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+  </script>
 
-<div class="container-fluid">
 
 
-  <div class="row property-header">
-    <div class="col-12">
-      <h1><%= @property.name %></h1>
-      <p><%= @property.address %></p>
+    <div class="container-fluid">
+      <div class="row property-header">
+      <div class="col-12">
+        <h1><%= @property.name %></h1>
+        <p><%= @property.address %></p>
+      </div>
+      </div>
     </div>
-  </div>
-</div>
 
 <div class="container">
 
@@ -35,10 +64,9 @@
       <%= simple_form_for([@user, @booking]) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
         <div class="form-inputs">
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, input_html: { id: "range_start" }  %>
+          <%= f.input :end_date, as: :string, required: false,  input_html: {class: "datepicker"}, input_html: { id: "range_end" }  %>
           <%= f.input :property_id, as: :hidden %>
           <%= f.input :status, as: :hidden %>
         </div>
@@ -49,28 +77,6 @@
       <% end %>
     </div>
   </div>
-
-
-
-
-
-
-
-</div> <!-- end container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--       <p>Available: <% if @booking.status %>
         <%= "unavailable" %>
