@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
     @user = current_user
     @property = Property.find(params[:id])
     @booking = Booking.new
+    # @booking = Booking.find(property_id = @property.id)
     @booking.property = @property
   end
 
@@ -20,11 +21,16 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.user = current_user
-    if @property.save!
+    if @property.save
       redirect_to property_path(@property)
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @property = Property.find(params[:id])
+    @property.destroy
   end
 
   private

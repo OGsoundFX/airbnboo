@@ -3,11 +3,13 @@
         <div class="grid">
                 <% @properties.each do |property| %>
                 <div class="card">
-                    <img class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"> <%= property.name %> </h5>
                         <p class="card-text"> <%= property.address %> </p>
-                         <%= link_to "Haunt that Ghost" , property_path(property), class: "btn-ghost" %>
+                         <%= link_to "Haunt that Ghost" , property_path(property), class: "btn btn-primary creepy-btn" %>
+                    </div>
+                    <div class="bg-image">
+                        
                     </div>
                 </div>
                 <% end %>

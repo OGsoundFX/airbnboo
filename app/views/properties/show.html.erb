@@ -1,6 +1,7 @@
 <h2><%= @property.name %></h2>
 <p><%= @property.address %></p>
 
+
 <% if @property.photo.attached? %>
   <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
 <% else %>
@@ -11,8 +12,13 @@
 
 
 
+<h5>Available: <% if @booking.status == true %>
+  <%= "unavailable" %>
+  <% else %>
+  <%= "available" %>
+  <% end %>
+</h5>
 
-<h5>Available: <%= @booking.status %></h5>
 
 <h1>Choose your date to book this place</h1>
 
@@ -21,8 +27,10 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :date %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
     <%= f.input :property_id, as: :hidden %>
+    <%= f.input :status, as: :hidden %>
   </div>
 
   <div class="form-actions">
@@ -31,4 +39,3 @@
 <% end %>
 
 <%= link_to '<< back' , properties_path%>
-
