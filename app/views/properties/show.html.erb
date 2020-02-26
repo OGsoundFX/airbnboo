@@ -1,6 +1,17 @@
 <h2><%= @property.name %></h2>
 <p><%= @property.address %></p>
 
+<% if @property.photo.attached? %>
+  <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
+<% else %>
+  <%=  image_tag 'hauted-house'%>
+  <%=  %>
+<% end %>
+
+
+
+
+
 <h5>Available: <%= @booking.status %></h5>
 
 <h1>Choose your date to book this place</h1>
