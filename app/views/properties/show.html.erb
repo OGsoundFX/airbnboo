@@ -1,7 +1,5 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <% if @property.photo.attached? %>
-  <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
 <% else %>
 <div class='background'>
   <div class="w3-content w3-display-container">
@@ -11,74 +9,86 @@
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
-  
+
 
 </div>
-    
+
 <% end %>
 
 <script>
   var slideIndex = 1;
   showDivs(slideIndex);
-  
+
   function plusDivs(n) {
     showDivs(slideIndex += n);
   }
-  
+
   function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("bg-image");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
+    if (n > x.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = x.length }
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
+      x[i].style.display = "none";
     }
-    x[slideIndex-1].style.display = "block";  
+    x[slideIndex - 1].style.display = "block";
   }
-  </script>
+</script>
 
 
 
-    <div class="container-fluid">
-      <div class="row property-header">
-      <div class="col-12">
-        <h1><%= @property.name %></h1>
-        <p><%= @property.address %></p>
-      </div>
-      </div>
+<div class="container-fluid">
+  <div class="row property-header">
+    <div class="col-12">
+      <h1><%= @property.name %></h1>
+      <p><%= @property.address %></p>
     </div>
+  </div>
+</div>
 
 <div class="container">
 
   <div class="row property-body">
 
 
-    <div class="col-8">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
+    <div class="col-8 text-center Lorem">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim
+        mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
+      </p>
     </div>
 
 
-    <div class="col-md-4 col-sm-12">
+    <div class="col-md-4 col-sm-12 text-center">
       <h4 class="roboto">Choose your date to book this place</h4>
 
       <%= simple_form_for([@user, @booking]) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <div class="form-inputs">
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, input_html: { id: "range_start" }  %>
-          <%= f.input :end_date, as: :string, required: false,  input_html: {class: "datepicker"}, input_html: { id: "range_end" }  %>
-          <%= f.input :property_id, as: :hidden %>
-          <%= f.input :status, as: :hidden %>
-        </div>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs">
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, input_html: { id: "range_start" }  %>
+        <%= f.input :end_date, as: :string, required: false,  input_html: {class: "datepicker"}, input_html: { id: "range_end" }  %>
+        <%= f.input :property_id, as: :hidden %>
+        <%= f.input :status, as: :hidden %>
+      </div>
 
-        <div class="form-actions text-right">
-          <%= f.button :submit, class: "btn btn-primary creepy-btn" %>
-        </div>
+      <div class="form-actions  text-center">
+        <%= f.button :submit, class: "btn btn-primary creepy-btn" %>
+      </div>
       <% end %>
     </div>
   </div>
+</div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-copyright">
+      I ain't afraid of no <i class="fas fa-ghost"></i> <i class="fas fa-ghost"></i>.
+    </div>
+  </div>
 
-<!--       <p>Available: <% if @booking.status %>
+  <!--       <p>Available: <% if @booking.status %>
         <%= "unavailable" %>
         <% else %>
         <%= "available" %>
