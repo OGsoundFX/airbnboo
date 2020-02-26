@@ -64,10 +64,9 @@
       <%= simple_form_for([@user, @booking]) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
         <div class="form-inputs">
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, input_html: { id: "range_start" }  %>
+          <%= f.input :end_date, as: :string, required: false,  input_html: {class: "datepicker"}, input_html: { id: "range_end" }  %>
           <%= f.input :property_id, as: :hidden %>
           <%= f.input :status, as: :hidden %>
         </div>
@@ -78,28 +77,6 @@
       <% end %>
     </div>
   </div>
-
-
-
-
-
-
-
-</div> <!-- end container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--       <p>Available: <% if @booking.status %>
         <%= "unavailable" %>
