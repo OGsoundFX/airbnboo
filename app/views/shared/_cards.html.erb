@@ -1,20 +1,19 @@
 <div class="container">
     <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
         <div class="grid">
-                <% @properties.each do |property| %>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"> <%= property.name %> </h5>
-                        <p class="card-text"> <%= property.address %> </p>
-                         <%= link_to "Haunt that Ghost" , property_path(property), class: "btn btn-primary creepy-btn" %>
-                    </div>
-                    <div class="bg-image">
-                        
-                    </div>
+            <% @properties.each do |property| %>
+            <div class="card">
+                <div>
+                    <%= image_tag 'banner' , class: 'bg-image' %>
                 </div>
-                <% end %>
+                    <h5 class="card-title"> <%= property.name %> </h5>
+                    <p class="card-text"> <%= property.address %> </p>
+                    <%= link_to "Haunt that Ghost" , property_path(property), class: "btn btn-primary creepy-btn" %>
             </div>
+            <% end %>
         </div>
     </div>
+</div>
+</div>
 </div>
 </div>

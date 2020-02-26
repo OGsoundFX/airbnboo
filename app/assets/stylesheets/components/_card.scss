@@ -1,15 +1,12 @@
 .card{
+    display: flex;
     width: 300px;
-    height: 300px;
+    height: 350px;
     margin: 15px;
     background: linear-gradient(#615854 , rgb(37, 37, 37));
-    background-size: cover;
-    object-fit: cover;
-}
-
-
-.card-body{
-    display: inline-block;
+    padding: 5px;
+    align-items: center;
+    box-shadow: 0px 0px 13px;
 }
 
 .card-title{
@@ -20,4 +17,12 @@
 .card-text{
     color: #b6b1af;
     
+}
+
+.bg-image{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    opacity: 0.5;
 }
