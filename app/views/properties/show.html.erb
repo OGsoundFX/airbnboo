@@ -3,9 +3,9 @@
 <% else %>
 <div class='background'>
   <div class="w3-content w3-display-container">
-    <%=  image_tag 'haunted-house', class: 'bg-image' %>
-    <%=  image_tag 'banner', class: 'bg-image' %>
-    <%=  image_tag 'haunted-house', class: 'bg-image' %>
+    <%=  image_tag 'haunted-house.jpg', class: 'bg-image' %>
+    <%=  image_tag 'banner.jpg', class: 'bg-image' %>
+    <%=  image_tag 'haunted-house.jpg', class: 'bg-image' %>
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
@@ -88,11 +88,11 @@
     </div>
   </div>
 
-  <!--       <p>Available: <% if @booking.status %>
-        <%= "unavailable" %>
-        <% else %>
-        <%= "available" %>
-        <% end %>
+  <!--       <p>Available: <#% if @booking.status %>
+        <%#= "unavailable" %>
+        <%# else %>
+        <%#= "available" %>
+        <% #end %>
       </p>
 
 
@@ -100,5 +100,5 @@
   </div>
 </div>
 
-<%= link_to '<< back' , properties_path%>
+<%#= link_to '<< back' , properties_path%>
  -->
