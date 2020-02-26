@@ -1,3 +1,13 @@
+
+
+<% if @property.photo.attached? %>
+  <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
+<% else %>
+  <%=  image_tag 'haunted-house'%>
+  <%=  %>
+<% end %>
+
+
 <div class="container-fluid">
 
 
