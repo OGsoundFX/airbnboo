@@ -13,7 +13,7 @@ class PropertiesController < ApplicationController
   end
   end
 
-# list specific properties
+  # list specific properties
   def show
     @user = current_user
     @property = Property.find(params[:id])
@@ -22,7 +22,7 @@ class PropertiesController < ApplicationController
     @booking.property = @property
   end
 
-# create new properties
+  # create new properties
   def new
     @property = Property.new
   end
@@ -33,7 +33,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to property_path(@property)
     else
-      render 'new'
+      render "new"
     end
   end
 
