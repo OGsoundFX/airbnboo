@@ -1,7 +1,7 @@
 require 'open-uri'
 
 # USER
-casper = User.create!(full_name: 'Casper Ghost', email: 'casper360@gmail.com', password: '123456')
+casper = User.create!(full_name: 'Casper Ghost', email: 'casper@gmail.com', password: '123456')
 
 # PHOTOS OF HAUNTED HOUSES
 photos = [
@@ -30,49 +30,49 @@ properties = [
   },
   {
     name: 'Ghost Cottage',
-    address: 'Gubener Str. 10, Kiefersfelden',
+    address: 'Torstrasse 109, Berlin',
     price: 136,
     haunted_level: 3,
     user: casper,
   },
   {
     name: 'House of Torment',
-    address: 'Bleibtreustrasse 9, Rheda-Wiedenbrück',
+    address: 'Witebska 2-1, Zielona Góra',
     price: 245,
     haunted_level: 5,
     user: casper,
   },
   {
     name: 'Stanley Hotel',
-    address: 'Kieler Strasse 13, Palling',
+    address: 'Carl-von-Ossietzky-Straße 18, Potsdam',
     price: 360,
     haunted_level: 5,
     user: casper,
   },
   {
     name: 'Hotel Gertrud',
-    address: 'Grosse Praesidenten Str. 39, Bensheim',
+    address: 'Lindenallee 25, Stralsund',
     price: 250,
     haunted_level: 3,
     user: casper,
   },
   {
     name: 'Alte Scheune',
-    address: 'Hermannstrasse 28, Flörsheim-Dalsheim',
+    address: 'Hermannstrasse 28, Berlin',
     price: 245,
     haunted_level: 5,
     user: casper,
   },
   {
     name: 'Jeepers Creepers',
-    address: 'Eichendorffstr. 85, Emmingen-Liptingen',
+    address: 'Wörlitzer Str. 16-22, Berlin',
     price: 270,
     haunted_level: 4,
     user: casper,
   },
   {
     name: 'Adams Mansion',
-    address: 'Feldstrasse 22, Arneburg',
+    address: 'Am Kietzer Feld, Berlin',
     price: 362,
     haunted_level: 5,
     user: casper,
