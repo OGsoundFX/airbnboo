@@ -1,16 +1,16 @@
 class PropertiesController < ApplicationController
   # list all properties
   def index
-    @properties = Property.geocoded #returns flats with coordinates
+  @properties = Property.geocoded #returns flats with coordinates
 
-    @markers = @properties.map do |property|
-      {
-        lat: property.latitude,
-        lng: property.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { property: property }),
-        image_url: helpers.asset_url("custom_marker.png"),
-      }
-    end
+  @markers = @properties.map do |property|
+    {
+      lat: property.latitude,
+      lng: property.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { property: property }),
+      image_url: helpers.asset_url('custom_marker.png')
+    }
+  end
   end
 
   # list specific properties
