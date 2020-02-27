@@ -107,7 +107,7 @@ properties = [
   },
 ]
 
-puts "generating haunted houses"
+puts "-- Generating haunted houses"
 
 # CREATING PROPERTIES WITH ATTRIBUTES
 properties.each_with_index do |property, index|
@@ -117,4 +117,4 @@ properties.each_with_index do |property, index|
   prop.save!
 end
 
-puts "hauted houses are ready!👻"
+puts "-- Haunted houses are ready!👻"
