@@ -13,7 +13,9 @@ class PropertiesController < ApplicationController
   def show
     @user = current_user
     @property = Property.find(params[:id])
+    @bookings = Booking.all.select { |booking|  booking.property == @property }
     @booking = Booking.new
+    @users = User.all
     # @booking = Booking.find(property_id = @property.id)
     @booking.property = @property
   end

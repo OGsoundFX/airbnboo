@@ -1,6 +1,7 @@
 require 'open-uri'
 
 # USER
+
 casper = User.create!(full_name: 'Casper Ghost', email: 'casper@gmail.com', password: '123456')
 
 # PHOTOS OF HAUNTED HOUSES

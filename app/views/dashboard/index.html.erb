@@ -13,7 +13,7 @@
           <h3><%= booking.property.name %></h3>
           <p><strong>Haunted level:</strong> <%= booking.property.haunted_level %></p>
           <p><strong>Address:</strong> <%= booking.property.address %></p>
-          <p><strong>Address:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
+          <p><strong>Date:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
         </div>
         <div class="card-product-link">
           <%= link_to "Details", property_path(booking.property), class: 'btn btn-primary creepy-btn' %>
@@ -33,7 +33,11 @@
         <h3><%= booking.property.name %></h3>
         <p><strong>Haunted level:</strong> <%= booking.property.haunted_level %></p>
         <p><strong>Address:</strong> <%= booking.property.address %></p>
-        <p><strong>Address:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
+        <p><strong>Date:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
+      </div>
+      
+      <div class="card-product-link">
+        <%= link_to "Review this booking", new_property_booking_review(property, booking), class: "btn btn-primary creepy-btn" %>
       </div>
     </div>
   <% end %>
