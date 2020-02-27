@@ -35,9 +35,9 @@
         <p><strong>Address:</strong> <%= booking.property.address %></p>
         <p><strong>Date:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
       </div>
-      
+
       <div class="card-product-link">
-        <%= link_to "Review this booking", new_property_booking_review(property, booking), class: "btn btn-primary creepy-btn" %>
+        <%= link_to "Review this booking", new_property_booking_review_path(booking.property, booking), class: "btn btn-secondary creepy-btn" %>
       </div>
     </div>
   <% end %>
