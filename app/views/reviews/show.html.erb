@@ -1,0 +1,8 @@
+<h1>Your rating for your stay at <%= @property.name %> is <%= @review.rating %></h1>
+<br>
+<h4>You commented:</h4>
+
+<p><%= @review.content %></p>
+
+<p>Back to </p><%= link_to @property.name, property_path(@property) %>
+

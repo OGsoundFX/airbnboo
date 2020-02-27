@@ -61,7 +61,7 @@
     <div class="col-md-4 col-sm-12 text-center">
       <h4 class="roboto">Choose your date to book this place</h4>
 
-      <%= simple_form_for([@user, @booking]) do |f| %>
+      <%= simple_form_for([@property, @booking]) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="form-inputs">

@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+  def show
+    @property = Property.find(params[:property_id])
+  #  @booking = Booking.find(params[:id])
+  end
+
   def new
     @user = User.find(params[:user_id])
     @booking = Booking.new
@@ -23,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :property_id, :status)
+    params.require(:booking).permit(:start_date, :end_date, :property_id, :status, :id)
   end
 end
