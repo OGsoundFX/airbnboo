@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <!-- show coming events -->
+  <h1>Your coming adventures</h1>
+  <br>
+  <% if @bookings.nil? %>
+    <p>You don’t have anything coming up, start exploring haunted houses for your next trip.😿</p>
+    <%= link_to "Explore haunted houses", properties_path, class: "btn btn-primary mt-5 mb-5" %>
+  <% else %>
+    <% @future_bookings.each do |booking| %>
+      <h3>Venue: <%= booking.property[:name] %></h3>
+      <p>Haunted_level: <%= booking.property[:haunted_level] %></p>
+      <p>Address: <%= booking.property[:address] %></p>
+      <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
+      <br>
+      <br>
+    <% end %>
+  <% end  %>
+
+<!-- show past events -->
+  <h1 class="mt-5">Your past adventures</h1>
+  <br>
+  <% @past_bookings.each do |booking| %>
+    <h3>Venue: <%= booking.property[:name] %></h3>
+    <p>Haunted_level: <%= booking.property[:haunted_level] %></p>
+    <p>Address: <%= booking.property[:address] %></p>
+    <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
+    <br>
+    <br>
+  <% end %>
+
+</div>

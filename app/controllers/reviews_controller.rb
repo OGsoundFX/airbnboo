@@ -1,18 +1,26 @@
 class ReviewsController < ApplicationController
+
+  def show
+    @review = Review.find(params[:id])
+    @property = Property.find(params[:property_id])
+  end
+
   def new
+    @property = Property.find(params[:property_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @booking = Booking.find(params[:booking_id])
-    @property = @booking.property
-    # @user = User.find(params[:user_id])
-    # @booking = Booking.find(params[:booking_id])
-    @property.user = current_user
-    if @review.save
-    redirect_to property_path(@property.id)
-    # redirect_to user_path(@user.id)
+    # @property = Property.find(review_params[:property_id].to_i)
+    @booking = Booking.find(params[:booking_id].to_i)
+    @booking.property = @property
+    @review.user = current_user
+    @review.booking = @booking
+    @property = Property.find(params[:property_id])
+    if @review.save!
+      redirect_to property_path(@property)
     else
       render :new
     end
@@ -26,6 +34,6 @@ class ReviewsController < ApplicationController
     private
 
   def review_params
-    params.require(:review).permit(:rating, :content, :booking_id)
+    params.require(:review).permit(:rating, :content, :property_id, :booking_id, :id)
   end
 end

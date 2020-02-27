@@ -1,19 +1,14 @@
-<div class="container">
-    <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
-        <div class="grid">
-            <% @properties.each do |property| %>
-            <div class="card">
-                <div>
-                    <%= image_tag 'banner.jpg' , class: 'card-image' %>
-                </div>
-                    <h5 class="card-title"> <%= property.name %> </h5>
-                    <p class="card-text"> <%= property.address %> </p>
-                    <%= link_to "Haunt that Ghost" , property_path(property), class: "btn btn-primary creepy-btn" %>
-            </div>
-            <% end %>
-        </div>
+<div class="row">
+  <% @properties.each do |property| %>
+  <div class="card-grid col-lg-4 col-md-6 col-sm-12">
+    <div class="card">
+      <!-- <div class="card-image">
+        <%= image_tag 'banner.jpg' %>
+      </div> -->
+      <h5 class="card-title"> <%= property.name %> </h5>
+      <p class="card-text"> <%= truncate(property.address, length: 34, separator: ' ', omission: '') %> </p>
+      <%= link_to "Haunt that place" , property_path(property), class: "btn btn-primary creepy-btn" %>
     </div>
-</div>
-</div>
-</div>
+  </div>
+  <% end %>
 </div>

@@ -9,59 +9,33 @@
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
-
-
 </div>
-
 <% end %>
-
-<script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("bg-image");
-    if (n > x.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex - 1].style.display = "block";
-  }
-</script>
-
-
 
 <div class="container-fluid">
   <div class="row property-header">
     <div class="col-12">
       <h1><%= @property.name %></h1>
-      <p><%= @property.address %></p>
+      <div class="roboto">
+        <p><%= @property.address %></p>
+        <p>Price: <%= @property.price %></p>
+        <p>Hauted Level: <%= @property.haunted_level %></p>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-
   <div class="row property-body">
-
-
     <div class="col-8 text-center Lorem">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim
         mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
       </p>
     </div>
-
-
     <div class="col-md-4 col-sm-12 text-center">
       <h4 class="roboto">Choose your date to book this place</h4>
 
-      <%= simple_form_for([@user, @booking]) do |f| %>
+      <%= simple_form_for([@property, @booking]) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="form-inputs">
