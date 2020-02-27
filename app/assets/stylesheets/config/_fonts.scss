@@ -1,6 +1,6 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url('https://fonts.googleapis.com/css?family=Roboto|Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Schoolbell&display=swap');
 
 // Define fonts for body and headers
 $body-font: "Roboto", "Helvetica", "sans-serif";
@@ -9,7 +9,6 @@ $headers-font: "Schoolbell", "Helvetica", "sans-serif";
 .roboto {
   font-family: $body-font;
   font-size: 1.5em;
-  margin: 15px;
   color: #b6b1af;
 }
 
