@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       @booking.status = true
-      redirect_to property_path(@booking.property_id)
+      redirect_to user_dashboard_index_path(current_user)
     else
       render 'new'
     end

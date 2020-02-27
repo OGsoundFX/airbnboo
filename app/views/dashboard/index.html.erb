@@ -3,7 +3,8 @@
   <h1>Your coming adventures</h1>
   <br>
   <% if @bookings.nil? %>
-    <p>There's no booking yet😿</p>
+    <p>You don’t have anything coming up, start exploring haunted houses for your next trip.😿</p>
+    <%= link_to "Explore haunted houses", properties_path, class: "btn btn-primary mt-5 mb-5" %>
   <% else %>
     <% @future_bookings.each do |booking| %>
       <h3>Venue: <%= booking.property[:name] %></h3>
@@ -16,7 +17,7 @@
   <% end  %>
 
 <!-- show past events -->
-  <h1>Your past adventures</h1>
+  <h1 class="mt-5">Your past adventures</h1>
   <br>
   <% @past_bookings.each do |booking| %>
     <h3>Venue: <%= booking.property[:name] %></h3>
@@ -26,4 +27,5 @@
     <br>
     <br>
   <% end %>
+
 </div>
