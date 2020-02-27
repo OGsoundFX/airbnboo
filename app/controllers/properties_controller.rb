@@ -1,15 +1,14 @@
 class PropertiesController < ApplicationController
   # list all properties
   def index
-  # @properties = Property.all
-    @properties = Property.geocoded #returns flats with coordinates
+  @properties = Property.geocoded #returns flats with coordinates
 
-    @markers = @properties.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+  @markers = @properties.map do |property|
+    {
+      lat: property.latitude,
+      lng: property.longitude
+    }
+  end
   end
 
 # list specific properties
