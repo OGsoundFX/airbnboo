@@ -12,6 +12,7 @@
       <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
       <br>
       <br>
+
     <% end %>
   <% end  %>
 
@@ -23,6 +24,7 @@
     <p>Haunted_level: <%= booking.property[:haunted_level] %></p>
     <p>Address: <%= booking.property[:address] %></p>
     <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
+    <%= link_to "Review this booking", "/properties/#{booking.property_id}/bookings/#{booking.id}/reviews/new", class: "btn btn-primary creepy-btn" %>
     <br>
     <br>
   <% end %>

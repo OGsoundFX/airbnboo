@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+# Property.destroy_all
+# User.destroy_all
 casper = User.create!(full_name: 'Casper Ghost', email: 'casper@gmail.com', password: '123456')
 
 puts "generating hauted houses"

@@ -61,6 +61,20 @@
       </div>
       <% end %>
     </div>
+
+    <div>
+
+
+        <% @bookings.each do |booking| %>
+          <% booking.reviews.first(3).each do |review| %>
+            <%= review.content %>
+            <%= User.find(review.user_id).email %>
+          <% end %>
+        <% end %>
+
+
+    </div>
+
   </div>
 </div>
   <div class="footer">
