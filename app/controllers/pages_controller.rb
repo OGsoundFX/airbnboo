@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     if params[:query].present?
       @properties = Property.search_by_address_and_name(params[:query])
     else
-      @properties = Property.all
+      @properties = Property.limit(6).order(haunted_level: :desc)
     end
   end
 end
