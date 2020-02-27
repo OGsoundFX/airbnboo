@@ -15,33 +15,18 @@
 
 <% end %>
 
-<script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("bg-image");
-    if (n > x.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    x[slideIndex - 1].style.display = "block";
-  }
-</script>
 
 
 
 <div class="container-fluid">
   <div class="row property-header">
-    <div class="col-12">
+    <div class="col-12 subbanner">
       <h1><%= @property.name %></h1>
-      <p><%= @property.address %></p>
+      <div class="roboto">
+        <p><%= @property.address %></p>
+        <p>Price: <%= @property.price %></p>
+        <p>Hauted Level: <%= @property.haunted_level %></p>
+      </div>
     </div>
   </div>
 </div>
