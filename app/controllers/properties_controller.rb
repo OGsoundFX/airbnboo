@@ -1,16 +1,12 @@
 class PropertiesController < ApplicationController
   # list all properties
   def index
-  @properties = Property.geocoded #returns flats with coordinates
-
-  @markers = @properties.map do |property|
-    {
-      lat: property.latitude,
-      lng: property.longitude,
-      infoWindow: render_to_string(partial: "info_window", locals: { property: property }),
-      image_url: helpers.asset_url('custom_marker.png')
-    }
-  end
+    if params[:query].present?
+      @properties = Property.search_by_address_and_name(params[:query])
+    else
+      @properties = Property.all
+    end
+    geocode(@properties)
   end
 
   # list specific properties
@@ -43,6 +39,18 @@ class PropertiesController < ApplicationController
   end
 
   private
+
+  def geocode(properties)
+    properties.geocoded #returns flats with coordinates
+    @markers = properties.map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { property: property }),
+        image_url: helpers.asset_url("custom_marker.png"),
+      }
+    end
+  end
 
   def property_params
     params.require(:property).permit(:name, :address, :price, :haunted_level, :photo)
