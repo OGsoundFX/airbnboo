@@ -1,3 +1,23 @@
-<%= render 'shared/cards' %>
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-7">
+      <%= render 'shared/cards' %>
+    </div>
+
+    <div class="col-5">
+      <div
+      id="map"
+      style="height: 100vh; position: sticky;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
 
 
