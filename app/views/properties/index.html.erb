@@ -1,14 +1,14 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-7">
+    <div class="col-8">
       <%= render 'shared/cards' %>
     </div>
 
-    <div class="col-5">
+    <div class="col-4" style="margin-top: 15px;">
       <div
       id="map"
-      style="height: 100vh; position: sticky;"
+      style="height: 100vh; position: sticky; top: 0px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -18,6 +18,5 @@
 
 
 </div>
-
 
 
