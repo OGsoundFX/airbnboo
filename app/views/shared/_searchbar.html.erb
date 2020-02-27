@@ -1,0 +1,8 @@
+
+<%= form_tag properties_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for Houses" %> 
+  <%= submit_tag "Haunt that House", class: "btn btn-primary creepy-btn" %>
+<% end %>
