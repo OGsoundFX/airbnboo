@@ -14,3 +14,10 @@
 .nav-item .active .nav-link {
   color: white;
 }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
