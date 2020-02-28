@@ -1,33 +1,45 @@
 <div class="container mt-5">
   <!-- show coming events -->
-  <h1>Your coming adventures</h1>
+  <h1 class="roboto">Your upcoming adventures</h1>
   <br>
   <% if @bookings.nil? %>
     <p>You don’t have anything coming up, start exploring haunted houses for your next trip.😿</p>
     <%= link_to "Explore haunted houses", properties_path, class: "btn btn-primary mt-5 mb-5" %>
   <% else %>
     <% @future_bookings.each do |booking| %>
-      <h3>Venue: <%= booking.property[:name] %></h3>
-      <p>Haunted_level: <%= booking.property[:haunted_level] %></p>
-      <p>Address: <%= booking.property[:address] %></p>
-      <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
-      <br>
-      <br>
-
+      <div class="card-product">
+        <%= cl_image_tag booking.property.photo.key %>
+        <div class="card-product-infos">
+          <h3><%= booking.property.name %></h3>
+          <p><strong>Haunted level:</strong> <%= booking.property.haunted_level %></p>
+          <p><strong>Address:</strong> <%= booking.property.address %></p>
+          <p><strong>Date:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
+        </div>
+        <div class="card-product-link">
+          <%= link_to "Details", property_path(booking.property), class: 'btn btn-primary creepy-btn' %>
+        </div>
+      </div>
     <% end %>
-  <% end  %>
+  <% end %>
+
 
 <!-- show past events -->
-  <h1 class="mt-5">Your past adventures</h1>
+  <h1 class="roboto mt-5">Your past adventures</h1>
   <br>
   <% @past_bookings.each do |booking| %>
-    <h3>Venue: <%= booking.property[:name] %></h3>
-    <p>Haunted_level: <%= booking.property[:haunted_level] %></p>
-    <p>Address: <%= booking.property[:address] %></p>
-    <p>Date: <%= booking[:start_date] %> ~ <%= booking[:end_date] %> </p>
-    <%= link_to "Review this booking", "/properties/#{booking.property_id}/bookings/#{booking.id}/reviews/new", class: "btn btn-primary creepy-btn" %>
-    <br>
-    <br>
+    <div class="card-product">
+      <%= cl_image_tag booking.property.photo.key %>
+      <div class="card-product-infos">
+        <h3><%= booking.property.name %></h3>
+        <p><strong>Haunted level:</strong> <%= booking.property.haunted_level %></p>
+        <p><strong>Address:</strong> <%= booking.property.address %></p>
+        <p><strong>Date:</strong> <%= booking.start_date %> ~ <%= booking.end_date %> </p>
+      </div>
+
+      <div class="card-product-link">
+        <%= link_to "Review this booking", new_property_booking_review_path(booking.property, booking), class: "btn btn-secondary creepy-btn" %>
+      </div>
+    </div>
   <% end %>
 
 </div>
