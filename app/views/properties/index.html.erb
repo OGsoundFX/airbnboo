@@ -1,18 +1,17 @@
+<div class="grid">
+  <div>
+    <%= render 'shared/cards' %>
+  </div>
 
-  <div class="grid">
-    <div>
-      <%= render 'shared/cards' %>
-    </div>
-
-    <div style="margin-top: 15px; margin-right: 15px; margin-left: 15px">
-      <div
-      id="map"
-      style="height: 100vh; position: sticky; top: 0px; border-radius: 6px; "
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  <div style="margin-top: 15px; margin-right: 15px; margin-left: 15px">
+    <div
+    id="map"
+    style="height: 100vh; position: sticky; top: 0px; border-radius: 6px; "
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
 
 
 
