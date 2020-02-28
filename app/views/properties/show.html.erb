@@ -34,8 +34,8 @@
 <div class="container">
   <div class="row property-body">
     <div class="col-8 text-center Lorem">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim
-        mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
+      <p>
+        <%= @property.description %>
       </p>
       <% @bookings.each do |booking| %>
       <% booking.reviews.first(3).each do |review| %>
