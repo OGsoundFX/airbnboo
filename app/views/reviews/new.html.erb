@@ -1,18 +1,25 @@
-<h1>Write a review</h1>
+<div class="container w-50 mt-5 text-white">
+  <h1>Write a review</h1>
 
-<%= simple_form_for([@property, @booking, @review]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :rating %>
-  </div>
+  <%= simple_form_for([@property, @booking, @review]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :content %>
-  </div>
+    <br>
+    <p>Rate your stay!</p>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+
+    <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :last, :first, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+      <%= b.radio_button + b.label(:class => "collection_radio_buttons icon-star") %>
+    <% end %>
+
+    <div class="form-inputs">
+      <%= f.input :content %>
+    </div>
+
+    <div class="form-actions, btn btn-primary creepy-btn">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.booking = @booking
     @property = Property.find(params[:property_id])
-    if @review.save!
+    if @review.save
       redirect_to property_path(@property)
     else
       render :new
