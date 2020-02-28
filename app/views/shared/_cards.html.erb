@@ -7,6 +7,8 @@
       </div>
       <h5 class="card-title roboto"> <%= property.name %> </h5>
       <p class="card-text"> <%= truncate(property.address, length: 34, separator: ' ', omission: '') %> </p>
+      <p class="card-text">Haunted level: <%= property.haunted_level %></p>
+      <p class="card-text">Price: <%= property.price %>€</p>
       <%= link_to "Haunt that place" , property_path(property), class: "btn btn-primary creepy-btn" %>
     </div>
   </div>
