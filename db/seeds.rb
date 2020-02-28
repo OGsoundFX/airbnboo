@@ -32,6 +32,7 @@ properties = [
     address: 'Rudi-Dutschke-Strasse 36, Berlin',
     price: 200,
     haunted_level: 1,
+    description: "The Hollywood Tower has gained paranormal notoriety around the world, with some believing it to be a portal that causes visitors to disappear. Do you dare to visit?",
     user: casper,
   },
   {
@@ -39,6 +40,7 @@ properties = [
     address: 'Torstrasse 109, Berlin',
     price: 136,
     haunted_level: 3,
+    description: "",
     user: casper,
   },
   {
@@ -46,6 +48,7 @@ properties = [
     address: 'Witebska 2-1, Zielona Góra',
     price: 245,
     haunted_level: 5,
+    description: "",
     user: casper,
   },
   {
@@ -53,6 +56,7 @@ properties = [
     address: 'Carl-von-Ossietzky-Straße 18, Potsdam',
     price: 360,
     haunted_level: 5,
+    description: "",
     user: casper,
   },
   {
@@ -60,6 +64,7 @@ properties = [
     address: 'Lindenallee 25, Stralsund',
     price: 250,
     haunted_level: 3,
+    description: "",
     user: casper,
   },
   {
@@ -67,6 +72,7 @@ properties = [
     address: 'Hermannstrasse 28, Berlin',
     price: 245,
     haunted_level: 5,
+    description: "",
     user: casper,
   },
   {
@@ -74,6 +80,7 @@ properties = [
     address: 'Wörlitzer Str. 16-22, Berlin',
     price: 270,
     haunted_level: 4,
+    description: "",
     user: casper,
   },
   {
@@ -81,6 +88,7 @@ properties = [
     address: 'Am Kietzer Feld, Berlin',
     price: 362,
     haunted_level: 5,
+    description: "",
     user: casper,
   },
   {
@@ -88,6 +96,7 @@ properties = [
     address: 'Modersohnstrasse 30, Berlin',
     price: 175,
     haunted_level: 3,
+    description: "",
     user: casper,
   },
   {
@@ -95,6 +104,7 @@ properties = [
     address: 'Am Viktoriabrunnen 2, Coburg',
     price: 180,
     haunted_level: 4,
+    description: "",
     user: casper,
   },
   {
@@ -102,6 +112,7 @@ properties = [
     address: 'Genslerstraße 84, Berlin',
     price: 200,
     haunted_level: 1,
+    description: "",
     user: casper,
   },
   {
@@ -109,6 +120,7 @@ properties = [
     address: 'Waßmannsdorfer Chaussee 35',
     price: 150,
     haunted_level: 3,
+    description: "",
     user: casper,
   },
 ]
