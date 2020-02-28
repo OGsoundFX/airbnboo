@@ -1,11 +1,11 @@
 require 'open-uri'
 
 # USER
-puts 'Deleting all users'
-User.delete_all
-
 puts 'Deleting all properties'
 Property.delete_all
+
+puts 'Deleting all users'
+User.delete_all
 
 casper = User.create!(full_name: 'Casper Ghost', email: 'casper@gmail.com', password: '123456')
 
