@@ -1,8 +1,12 @@
-
-<%= form_tag properties_path, method: :get do %>
+<div class="search">
+  <%= form_tag properties_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Search for Houses" %> 
-  <%= submit_tag "Haunt that House", class: "btn btn-primary creepy-btn" %>
+    placeholder: "Search for Houses" %>
+    <div class="search-buttons">
+      <%= submit_tag "Haunt that House", class: "btn btn-primary creepy-btn" %>
+      <%= submit_tag "See all", class: "btn btn-primary creepy-btn small-btn" %>    
+    </div> 
 <% end %>
+</div>

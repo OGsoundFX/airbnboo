@@ -1,5 +1,11 @@
 <% if @property.photo.attached? %>
-<%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
+<div class='background'>
+  <div class="w3-content w3-display-container">  
+    <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</div>
 <% else %>
 <div class='background'>
   <div class="w3-content w3-display-container">
