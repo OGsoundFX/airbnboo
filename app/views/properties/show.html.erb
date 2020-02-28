@@ -1,9 +1,9 @@
 <% if @property.photo.attached? %>
 <div class='background'>
-  <div class="w3-content w3-display-container">  
-    <%= cl_image_tag @property.photo.key,  height: 300, width: 400, crop: :fill %>
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <div class="w3-content w3-display-container">
+    <%= cl_image_tag @property.photo.key,  height: 400, width: 750, crop: :fill %>
+    <!-- <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button> -->
+    <!-- <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button> -->
   </div>
 </div>
 <% else %>
@@ -37,6 +37,17 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure hic repudiandae dolorum quidem officiis enim
         mollitia amet earum consequuntur tenetur molestias eveniet dicta quo distinctio velit fuga, cumque itaque ullam?
       </p>
+      <% @bookings.each do |booking| %>
+      <% booking.reviews.first(3).each do |review| %>
+      <div class="items">
+        <p>
+        <%= review.rating %> Stars<br>
+        <%= review.content %><br>
+        <%= User.find(review.user_id).email %>
+        </p>
+      </div>
+      <% end %>
+      <% end %>
     </div>
     <div class="col-md-4 col-sm-12 text-center">
       <h4 class="roboto">Choose your date to book this place</h4>
@@ -57,32 +68,21 @@
       <% end %>
     </div>
 
-    <div>
 
-
-        <% @bookings.each do |booking| %>
-          <% booking.reviews.first(3).each do |review| %>
-            <%= review.content %>
-            <%= User.find(review.user_id).email %>
-          <% end %>
-        <% end %>
-
-
-    </div>
 
   </div>
 </div>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-    </div>
-    <div class="footer-copyright">
-      I ain't afraid of no <i class="fas fa-ghost"></i> <i class="fas fa-ghost"></i>.
-    </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
   </div>
+  <div class="footer-copyright">
+    I ain't afraid of no <i class="fas fa-ghost"></i> <i class="fas fa-ghost"></i>.
+  </div>
+</div>
 
-  <!--       <p>Available: <#% if @booking.status %>
+<!--       <p>Available: <#% if @booking.status %>
         <%#= "unavailable" %>
         <%# else %>
         <%#= "available" %>
